@@ -36,16 +36,24 @@ class MenuTest {
 
 
     @Test
-    def serviceChargeOnFood() = assertEquals(2.2, Menu("Cheese Sandwich").total,0)
+    def serviceChargeOnFood_Add10() = assertEquals(2 +0.2, Menu("Cheese Sandwich").total,0)
 
     @Test
-    def priceMenuIncludesFood() = assertEquals(2.75, Menu("Cheese Sandwich","Cola").total, 0)
+    def priceMenuIncludesFood_Add10() = assertEquals((2+0.5) + 0.25, Menu("Cheese Sandwich","Cola").total, 0)
 
     @Test
-    def serviceChargeOnHotFood() = assertEquals(5.4, Menu("Steak Sandwich").total,0)
+    def serviceChargeOnHotFood_Add20() = assertEquals(4.5 + 0.9 , Menu("Steak Sandwich").total,0)
 
     @Test
-    def serviceChargeOn1KHotFood() = assertEquals(Menu.SteakSandwich.price*1000 + 2, Menu(List.fill(1000)("Steak Sandwich")).total,0)
+    def serviceChargeOnThreeHotFood_AddMax() = assertEquals(13.5 + 2, Menu(List.fill(3)("Steak Sandwich")).total,0)
+
+
+    @Test
+    def serviceChargeOnFourHotFood_AddMax() = assertEquals(18 + 2, Menu(List.fill(4)("Steak Sandwich")).total,0)
+
+
+    @Test
+    def serviceChargeOnFiveHotFood_Add10() = assertEquals(22.5 + 2.25, Menu(List.fill(5)("Steak Sandwich")).total,0)
 
     @Test
     def priceRoundingDown(){
