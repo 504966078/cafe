@@ -60,7 +60,7 @@ object Menu {
 
     def price = items.map(_.price).sum
 
-    def total = price + math.BigDecimal(charge).setScale(2, math.BigDecimal.RoundingMode.HALF_DOWN).doubleValue
+    def total = price + round(charge)
 
     def charge = 0.0
 
@@ -79,4 +79,5 @@ object Menu {
 
   def apply(xs : String*):Menu =  apply(xs.toList)
 
+  def round(d:Double):Double = math.BigDecimal(d).setScale(2, math.BigDecimal.RoundingMode.HALF_DOWN).doubleValue
 }

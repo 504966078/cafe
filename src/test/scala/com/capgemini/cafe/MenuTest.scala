@@ -47,6 +47,13 @@ class MenuTest {
     @Test
     def serviceChargeOn1KHotFood() = assertEquals(Menu.SteakSandwich.price*1000 + 2, Menu(List.fill(1000)("Steak Sandwich")).total,0)
 
+    @Test
+    def priceRoundingDown(){
+      assertEquals(1.0, Menu.round(1.004),0.0)
+      assertEquals(1.0, Menu.round(1.005),0.0)
+      assertEquals(1.01, Menu.round(1.006),0.0)
+    }
+
 }
 
 
