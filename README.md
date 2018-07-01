@@ -24,3 +24,8 @@ Add support for a service charge :
  When purchased items include any hot food apply a service charge of 20% to the total bill
 with a maximum £20 service charge
 
+How to use:
+Install maven
+Run mvn test
+
+
