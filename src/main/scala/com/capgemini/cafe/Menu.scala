@@ -49,11 +49,11 @@ object Menu {
 
 
   trait ServiceCharge10 extends Menu{
-    override def charge = if(items.exists(_.isInstanceOf[Food])) math.max(super.charge, price * 0.1) else super.charge
+    override def charge = super.charge + (if(items.exists(_.isInstanceOf[Food]))  price * 0.1 else 0.0)
   }
 
   trait ServiceCharge20 extends Menu{
-    override def charge = if(items.exists(i => i.isInstanceOf[Food] && i.isInstanceOf[Hot])) math.max(super.charge, math.min(2.0,price * 0.2)) else super.charge
+    override def charge = super.charge + (if(items.exists(i => i.isInstanceOf[Food] && i.isInstanceOf[Hot])) math.min(2.0,price * 0.2) else 0.0)
   }
 
   class Menu(val items : List[Item]){
