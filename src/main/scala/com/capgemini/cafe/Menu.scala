@@ -75,7 +75,7 @@ object Menu {
 
   }
 
-  def apply(xs : List[String]):Menu =  new Menu(xs.map((s:String) => Item(s)).flatten) with ServiceCharge10 with ServiceCharge20
+  def apply(xs : List[String]):Menu =  new Menu(xs.map(Item(_)).flatten) with ServiceCharge10 with ServiceCharge20
 
   def apply(xs : String*):Menu =  apply(xs.toList)
 
