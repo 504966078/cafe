@@ -27,6 +27,6 @@ with a maximum £20 service charge
 
 How to use:
 * Install maven
-* Run mvn test
+* mvn test
 
 
