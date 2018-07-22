@@ -1,4 +1,4 @@
-package com.capgemini
+package com.github.cafe
 
 import org.junit._
 import Assert._

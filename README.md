@@ -1,5 +1,6 @@
 # cafe
-capgemini problem
+
+Introduction to functional programming in Scala
 
 Scenario
 

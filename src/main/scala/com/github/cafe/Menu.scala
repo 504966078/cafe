@@ -1,8 +1,6 @@
-package com.capgemini
+package com.github.cafe
 
-/**
- * @author ${user.name}
- */
+
 object Menu {
 
   abstract class Item{
